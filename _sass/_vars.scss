@@ -1,0 +1,44 @@
+$font-stack: 'Source Sans Pro', sans-serif;
+
+$base-font-size: 1em;
+$base-line-height: 1.5;
+$base-spacing: $base-line-height * 1em;
+
+$break-small: 480px;
+$break-large: 980px;
+
+$bg-color: #fff;
+$blue-color: #4A96AD;
+$black-color: #000;
+$white-color: #fff;
+$well-color: #f7f7f7;
+$git-black-color: #333;
+$orange-color: #ff0000;
+$yellow-color: #FDF4B6;
+$dark-gray-color: #333;
+$light-gray-color: #ccc;
+$base-font-color: rgba($dark-gray-color, .8);
+$small-spacing: $base-spacing / 2;
+$base-border-color: $light-gray-color;
+$base-border: 1px solid $base-border-color;
+
+$code-font: 'Roboto Mono', sans-serif;
+$medium-gray-color: #999;
+
+/* Solarized Dark Colors */
+$sol-base03: #002b36;
+$sol-base02: #073642;
+$sol-base01: #586e75;
+$sol-base00: #657b83;
+$sol-base0: #839496;
+$sol-base1: #93a1a1;
+$sol-base2: #eee8d5;
+$sol-base3: #fdf6e3;
+$sol-yellow: #b58900;
+$sol-orange: #cb4b16;
+$sol-red: #dc322f;
+$sol-magenta: #d33682;
+$sol-violet: #6c71c4;
+$sol-blue: #268bd2;
+$sol-cyan: #2aa198;
+$sol-green: #859900;

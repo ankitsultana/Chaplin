@@ -1,0 +1,36 @@
+// @import url("//fonts.googleapis.com/css?family=Merriweather:400,300,700");
+
+blockquote {
+  padding: 0 0 0 $base-spacing;
+  margin: $base-spacing 0;
+  color: $medium-gray-color;
+  line-height: 1.8;
+  border-left: $small-spacing solid $light-gray-color;
+  font-style: italic;
+}
+
+p > code {
+  // background-color: $well-color;
+  color: $git-black-color;
+  padding: 0.1em 0.1em 0.1em 0.1em;
+  border-radius: 0.3em;
+}
+
+ul li {
+  list-style-type: circle;
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 1em 0em 1em 0.5em;
+}
+
+ol li {
+  font-size: 20px;
+  font-weight: lighter;
+  margin: 1em 0em 1em 0.5em;
+}
+
+.navlist li {
+  list-style-type: none;
+  padding: 0em 1em 0em 1em;
+  margin-top: 0px;
+}

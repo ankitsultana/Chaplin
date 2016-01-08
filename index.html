@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<section class="intro">
+  <div class="container">
+    <header class="welcome-header">
+      <p>{{  site.description  }}</p>
+    </header>
+  </div>
+</section>
+
+<section class="post-list">
+  <div class="container">
+    <h1 class="page-heading">Posts</h1>
+    <ul>
+      {% for post in site.posts %}
+        <li class="post-stub">
+          <!-- span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span -->
+          <h2 class="post-name">
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> 
+          </h2>
+          <span><time>{{ post.date | date_to_string }} </time> </span>
+          <p>{{ post.content | strip_html | truncatewords: 40 }}</p>
+        </li>
+        <hr>
+      {% endfor %}
+    </ul>
+    <!-- p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p -->
+  </div>
+</section>

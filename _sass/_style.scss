@@ -1,0 +1,154 @@
+@charset "utf-8";
+// @import "reset";
+@import "vars";
+@import "tables";
+@import "syntax_highlighting";
+@import "typography";
+
+* {
+  &,
+  &:before,
+  &:after {
+    box-sizing: border-box;
+  }
+}
+
+.clearfix {
+  &:before {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+
+  *zoom: 1;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	overflow-x: hidden;
+	font-family: $font-stack;
+	color: $base-font-color;
+	font-size: $base-font-size;
+	font-weight: 400;
+	@media (max-width: $break-large) {
+	}
+	@media (max-width: $break-small) {
+	}
+}
+
+a {
+	text-decoration: none;
+	color: $blue-color;
+}
+a:hover {
+	color: $blue-color;
+	cursor: pointer;
+}
+
+.post-stub span {
+	float: right;
+	@media (max-width: $break-small) {
+		display: none;
+	}
+	font-size: 15px;
+	margin-top: 0;
+	padding-top: 0;
+}
+
+p {
+	font-size: 20px;
+	font-weight: lighter;
+}
+
+.post-name {
+	display: inline;
+	@media (max-width: $break-small) {
+		padding-top: 0em;
+	}
+}
+
+.post-list {
+	ul {
+		padding-left: 0.4em;
+	}
+	li {
+		list-style-type: none;
+		margin-left: 0em;
+		// padding: 0em 1em 0em 1em;
+	}
+	background-color: $white-color;
+}
+.post-link {
+	color: $git-black-color;
+}
+
+.intro {
+	background-color: $git-black-color;
+	margin-bottom: 0px;
+	p {
+		font-size: 25px;
+		font-weight: lighter;
+	}
+	@media (max-width: $break-small) {
+		p {
+			font-size: 20px;
+		}
+	}
+	color: $white-color;
+}
+
+.logo {
+	font-family: 'Lobster';
+	text-align: center;
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+	font-size: 40px;
+	line-height: 28px;
+	font-weight: 300;
+	color: $dark-gray-color;
+	span {
+		font-weight: 700;
+	}
+}
+
+.nav {
+	min-height: 64px;
+	border-bottom: thin solid $git-black-color;
+}
+
+.navlist {
+	list-style-type: none;
+	text-transform: lowercase;
+	color: $dark-gray-color;
+	min-height: 64px;
+	float: right;
+	margin: 0;
+	position: relative;
+	padding: 0;
+}
+
+.container {
+	max-width: 800px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: $base-spacing;
+}
+
+.page-heading {
+	margin-top: 0;
+	font-weight: lighter;
+	font-size: 30px;
+}
+
+footer {
+	background-color: $git-black-color;
+	color: $white-color;
+}

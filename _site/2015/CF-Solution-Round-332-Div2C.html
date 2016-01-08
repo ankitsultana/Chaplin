@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CF Solution</title>
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300i,600">
+	<link href='https://fonts.googleapis.com/css?family=Roboto+Mono:400,100italic,300italic,300' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+	<nav class="nav">
+		<div class="container">
+  			<h1 class="logo"> Chaplin </h1>
+  			<ul class="navlist">
+  				<!-- li> About </li -->
+  			</ul>
+  		</div>
+	</nav>
+	<div class="content post container">
+	<h1 class="post-title">CF Solution</h1>
+	<div class="post-date">
+		<time>31 Dec 2015</time>
+	</div>
+	<p>Problem Statement: <a href="http://codeforces.com/contest/599/problem/C">CF Link</a></p>
+
+<p>First of all, let’s do a <a href="https://www.quora.com/What-is-coordinate-compression">Coordinate Compression</a>, so that the given array (say):</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">5
+1 100 200 300 100</code></pre></figure>
+
+<p>becomes</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">5
+1 2 3 4 2</code></pre></figure>
+
+<p><strong>Note:</strong> Henceforth, I will refer to the Coordinate Compressed array as the “Original Array”</p>
+
+<p>The answer for the above test case is <code class="highlighter-rouge">3</code>:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1][2][3 4 2]</code></pre></figure>
+
+<p>First of all we define blocks according to the question as:</p>
+
+<blockquote>
+  <p>A Block is a continuos sequence of integers such that  for a given range, the elements in the original array are a permutation of the elements in the sorted array for the same range</p>
+</blockquote>
+
+<p>In simple terms, considering the previous example, the sorted array is:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">1 2 2 3 4</code></pre></figure>
+
+<p>With Blocks (Note the square brackets don’t change positions):</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1][2][3 4 2]  # Original array
+[1][2][2 3 4]  # Sorted array</code></pre></figure>
+
+<p>Note that each block in the original array is a permutation of the elements of the <em>same block</em> in the sorted array.</p>
+
+<p>Notice an interesting property, if we combine <em>any</em> two adjacent blocks, the resulting “block” also satisfies our definition of a block.</p>
+
+<p>So if we merge second and third block in the original array, we get:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1][2 3 4 2]</code></pre></figure>
+
+<p>where the resulting blocks satisfy our definition of blocks.</p>
+
+<p>An even more interesting property is that, if we have an array with 2 blocks like shown below:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">a b c... [p q] r s t...</code></pre></figure>
+
+<p><code class="highlighter-rouge">[p q]</code> is a block</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">a b c... [p q r s] t...</code></pre></figure>
+
+<p><code class="highlighter-rouge">[p q r s]</code> is also a block</p>
+
+<p>then</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">a b c... p q [r s] t...</code></pre></figure>
+
+<p><code class="highlighter-rouge">[r s]</code> is also a block</p>
+
+<p>This can be proved using our definition of blocks.</p>
+
+<p>We can use the second property to our advantage. I will explain that later. But first, let me state an algorithm:</p>
+
+<blockquote>
+  <p>Start scanning the original array from left to right, if current element can be the last element of a block whose first element is the first element of the original array then increase a counter that is initially set to zero.</p>
+</blockquote>
+
+<p>In the end the counter will be our answer.</p>
+
+<p>How?</p>
+
+<p>Well let me write the five iterations for our initial test-case:</p>
+
+<p>Also let <code class="highlighter-rouge">counter = 0</code></p>
+
+<ul>
+  <li>Iteration One: The first element can be the last element of a block whose first element is the first element of the original array.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1] 2 3 4 2  # Original Array
+[1] 2 2 3 4  # Sorted Array</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">counter++; // counter is now 1</code></pre></figure>
+
+<ul>
+  <li>Iteration Two: The second element can be the last element of a block whose first element is the first element of the original array.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1 2] 3 4 2  # Original Array
+[1 2] 2 3 4  # Sorted Array</code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">counter++; // counter is now 2</code></pre></figure>
+
+<ul>
+  <li>Iteration Three: The third element <strong>cannot</strong> be the last element of a block whose first element is the first element of the original array, <em>since</em> if we were to create a block that started at the first element and had the third element as its last element:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1 2 3] 4 2  # Original Array
+[1 2 2] 3 4  # Sorted Array</code></pre></figure>
+
+<p><code class="highlighter-rouge">[1 2 3]</code> is <strong>not</strong> a permutation of <code class="highlighter-rouge">[1 2 2]</code></p>
+
+<ul>
+  <li>Iteration Four: Again the fourth element <strong>cannot</strong> be the last element, same reason as point 3.</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1 2 3 4] 2  # Original Array
+[1 2 2 3] 4  # Sorted Array</code></pre></figure>
+
+<p><code class="highlighter-rouge">[1 2 3 4]</code> is <strong>not</strong> a permutation of <code class="highlighter-rouge">[1 2 2 3]</code></p>
+
+<ul>
+  <li>Iteration Five: This element can be the last element, since:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1 2 3 4 2]  # Original Array
+[1 2 2 3 4]  # Sorted Array</code></pre></figure>
+
+<p><code class="highlighter-rouge">[1 2 3 4 2]</code> is a permutation of <code class="highlighter-rouge">[1 2 2 3 4]</code>.</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">counter++; // counter is now 3</code></pre></figure>
+
+<blockquote>
+  <p>But how do all these iterations relate to our original question?</p>
+</blockquote>
+
+<p>Well consider the iterations when we increment the counter, i.e. iterations <em>one</em>, <em>two</em>, <em>five</em>.</p>
+
+<p>Notice the blocks formed after the respective iterations:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">a. [1] 2 3 4 5
+b. [1 2] 3 4 2
+c. [1 2 3 4 2]</code></pre></figure>
+
+<p>Start applying the second property from the bottom.
+Initially we have block <em>c</em>:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1 2 3 4 2]</code></pre></figure>
+
+<p>Applying the second property on blocks <em>b</em> and <em>c</em>, we have the following blocks:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1 2][3 4 2]</code></pre></figure>
+
+<p>Now apply it to block <em>a</em> and <em>b</em>:</p>
+
+<figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">[1][2][3 4 2]</code></pre></figure>
+
+<p>Voila!!</p>
+
+<p>But wait, how do I code <em>the algorithm</em> ?</p>
+
+<p>Well let me restate the algorithm:</p>
+
+<blockquote>
+  <p>Scan from left to right, if the current element can be the last element of a block which opens before the first element, then increase a counter initially initialized to zero</p>
+</blockquote>
+
+<p>This is the same as checking if the prefix of the <em>Original Array</em> is a permutation of the prefix of the <em>Sorted Array</em>. How? Well</p>
+
+<blockquote>
+  <p>We increase the counter <em>iff</em> the continuos sequence of integers starting at index <code class="highlighter-rouge">1</code> and ending at index <code class="highlighter-rouge">i</code> in the Original Array is a permutation of the same in the Sorted Array.</p>
+</blockquote>
+
+<p>So the algorithm roughly translates to:</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="kt">int</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">original_array</span><span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">i</span><span class="p">]</span> <span class="n">is</span> <span class="n">a</span> <span class="n">permutation</span> <span class="n">of</span> <span class="n">sorted_array</span><span class="p">[</span><span class="mf">1.</span><span class="p">.</span><span class="n">i</span><span class="p">])</span>
+      <span class="n">counter</span><span class="o">++</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>How to implement that? Well figure out yourself!</p>
+
+<p>Here is the code for reference:</p>
+
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cm">/*  Author: Ankit Sultana
+ * * * * * * * * * * * * * * * * */</span>
+
+<span class="cp">#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;fstream&gt;
+#include &lt;map&gt;
+#include &lt;algorithm&gt;
+#include &lt;iterator&gt;
+#include &lt;vector&gt;
+#include &lt;set&gt;
+#include &lt;cassert&gt;
+#define LL long long
+#define PB push_back
+#define SWAP(a,b) a^=b,b^=a,a^=b
+#define MP make_pair
+#define vi vector&lt;int&gt;
+#define vll vector&lt;LL&gt;
+#define REP(i,n)    for(__typeof(n) i = 0; i &lt; n; i++)
+#define REP1(i,n)   for(__typeof(n) i = 1; i &lt;= n; i++)
+#define REPc(i,j,n) for(__typeof(n) i = j; i &lt;= n; i++)
+#define FOR(i,c) for(__typeof(c.begin()) i = c.begin(); i != c.end(); i++)
+#define F first
+#define S second
+#define smax(a, b) a = max(a, b)
+#define smin(a, b) a = min(a, b)
+#define mod 1000000007ll
+#define SZ(a) int(a.size())
+#define SZll(a) (LL)(a.size())
+#define DECODE(x) int(x-'0')
+#define ENCODE(x) char(x+'0')
+#define INF 1&lt;&lt;28
+#define what_is(x) cout&lt;&lt;#x&lt;&lt;" is "&lt;&lt;x&lt;&lt;'\n'
+#define pii pair&lt;int, int&gt;
+#define pll pair&lt;LL, LL&gt;
+#define pil pair&lt;int, LL&gt;
+#define pli pair&lt;LL, int&gt;
+#define MAXN 100002
+</span>
+<span class="kt">float</span> <span class="n">x</span> <span class="o">=</span> <span class="mf">3.41</span><span class="p">;</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">gcd</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">b</span> <span class="o">==</span> <span class="mi">0</span><span class="o">?</span><span class="n">a</span><span class="o">:</span> <span class="n">gcd</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="p">);</span> <span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">LCM</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">,</span> <span class="n">T</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span><span class="o">*</span><span class="p">(</span><span class="n">b</span><span class="o">/</span><span class="n">gcd</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">));</span> <span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">expo</span><span class="p">(</span><span class="n">T</span> <span class="n">b</span><span class="p">,</span> <span class="n">T</span> <span class="n">e</span><span class="p">,</span> <span class="k">const</span> <span class="n">T</span> <span class="o">&amp;</span><span class="n">m</span><span class="p">){</span><span class="k">if</span><span class="p">(</span><span class="n">e</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">)</span><span class="k">return</span> <span class="n">e</span> <span class="o">==</span> <span class="mi">0</span><span class="o">?</span><span class="mi">1</span><span class="o">:</span> <span class="n">b</span><span class="p">;</span>\
+    <span class="k">return</span> <span class="p">(</span><span class="n">e</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="o">?</span><span class="n">expo</span><span class="p">((</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">%</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">)</span><span class="o">:</span> <span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="n">expo</span><span class="p">((</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="p">)</span><span class="o">%</span><span class="n">m</span><span class="p">,</span> <span class="n">e</span><span class="o">&gt;&gt;</span><span class="mi">1</span><span class="p">,</span> <span class="n">m</span><span class="p">))</span><span class="o">%</span><span class="n">m</span><span class="p">;}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span> <span class="n">T</span> <span class="n">modinv</span><span class="p">(</span><span class="n">T</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">expo</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">mod</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="n">mod</span><span class="p">);</span> <span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="p">,</span> <span class="k">class</span> <span class="nc">S</span><span class="o">&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">pair</span><span class="o">&lt;</span><span class="n">T</span><span class="p">,</span> <span class="n">S</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">os</span><span class="o">&lt;&lt;</span><span class="s">"("</span><span class="o">&lt;&lt;</span><span class="n">t</span><span class="p">.</span><span class="n">first</span><span class="o">&lt;&lt;</span><span class="s">", "</span><span class="o">&lt;&lt;</span><span class="n">t</span><span class="p">.</span><span class="n">second</span><span class="o">&lt;&lt;</span><span class="s">")"</span><span class="p">;</span>  
+    <span class="k">return</span> <span class="n">os</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">template</span><span class="o">&lt;</span><span class="k">class</span> <span class="nc">T</span><span class="o">&gt;</span> <span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">os</span><span class="o">&lt;&lt;</span><span class="s">"["</span><span class="p">;</span> <span class="n">FOR</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="n">t</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span><span class="p">(</span><span class="n">it</span> <span class="o">!=</span> <span class="n">t</span><span class="p">.</span><span class="n">begin</span><span class="p">())</span> <span class="n">os</span><span class="o">&lt;&lt;</span><span class="s">", "</span><span class="p">;</span> <span class="n">os</span><span class="o">&lt;&lt;*</span><span class="n">it</span><span class="p">;</span> <span class="p">}</span> <span class="n">os</span><span class="o">&lt;&lt;</span><span class="s">"]"</span><span class="p">;</span>
+    <span class="k">return</span> <span class="n">os</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">arr</span><span class="p">[</span><span class="n">MAXN</span><span class="p">],</span> <span class="n">dupl</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+<span class="n">map</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">compress</span><span class="p">;</span>
+<span class="n">vi</span> <span class="n">pos</span><span class="p">[</span><span class="n">MAXN</span><span class="p">];</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="n">ios_base</span><span class="o">::</span><span class="n">sync_with_stdio</span><span class="p">(</span><span class="nb">false</span><span class="p">);</span>
+    <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">n</span><span class="p">;</span>
+    <span class="n">REP1</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">){</span>
+        <span class="n">cin</span><span class="o">&gt;&gt;</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>  
+        <span class="n">compress</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">cnt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">FOR</span><span class="p">(</span><span class="n">it</span><span class="p">,</span><span class="n">compress</span><span class="p">){</span>
+        <span class="n">it</span><span class="o">-&gt;</span><span class="n">S</span> <span class="o">=</span> <span class="o">++</span><span class="n">cnt</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">REP1</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">){</span>
+        <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">compress</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]];</span>  
+        <span class="n">dupl</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="n">sort</span><span class="p">(</span><span class="n">dupl</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">dupl</span><span class="o">+</span><span class="mi">1</span><span class="o">+</span><span class="n">n</span><span class="p">);</span>
+    <span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">s</span><span class="p">;</span>
+    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">){</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">dupl</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">PB</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">REP1</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">n</span><span class="p">){</span>
+        <span class="n">assert</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">empty</span><span class="p">()</span> <span class="o">==</span> <span class="nb">false</span><span class="p">);</span>
+        <span class="n">s</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">pos</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">back</span><span class="p">());</span>
+        <span class="n">pos</span><span class="p">[</span><span class="n">arr</span><span class="p">[</span><span class="n">i</span><span class="p">]].</span><span class="n">pop_back</span><span class="p">();</span>
+        <span class="k">if</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">rbegin</span><span class="p">())</span> <span class="o">==</span> <span class="n">i</span> <span class="o">&amp;&amp;</span> <span class="kt">int</span><span class="p">(</span><span class="n">s</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="o">==</span> <span class="n">i</span><span class="p">){</span>
+            <span class="n">res</span><span class="o">++</span><span class="p">;</span>  
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">cout</span><span class="o">&lt;&lt;</span><span class="n">res</span><span class="o">&lt;&lt;</span><span class="sc">'\n'</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+</div>
+	<footer>
+	<div class="container">
+		<p> Made with Jekyll and <small>♥</small> </p>
+	</div>
+</footer>
+
+</body>
+
+</html>
