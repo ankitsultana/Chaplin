@@ -9,8 +9,9 @@
 title: Chaplin
 email: ankitsultana@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
-  Chaplin is a black and white theme for <span>Jekyll</span>. It was made by 
-  Ankit Sultana.
+  Chaplin is a minimalistic, mobile friendly theme for Jekyll users. 
+  It's currently in Alpha Release right now. You can check it out on
+  <span> GitHub </span>
 baseurl: "/Chaplin" # the subpath of your site, e.g. /blog
 url: "http://bk2dcradle.gitub.io" # the base hostname & protocol for your site
 twitter_username: AnkitSultana
