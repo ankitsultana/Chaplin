@@ -22,7 +22,6 @@ permalink:          /:year/:title.html
 markdown: kramdown
 
 comments: true
-disqus_shortname: bk2dcradle
 
 paginate: 4
 paginate_path: "/page/:num"
