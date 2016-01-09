@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chaplin</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+    <description>Chaplin is a black and white theme for &lt;span&gt;Jekyll&lt;/span&gt;. It was made by  Ankit Sultana.
 </description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 09 Jan 2016 01:51:44 +0530</pubDate>
-    <lastBuildDate>Sat, 09 Jan 2016 01:51:44 +0530</lastBuildDate>
+    <link>http://bk2dcradle.gitub.io/blog//</link>
+    <atom:link href="http://bk2dcradle.gitub.io/blog//feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 09 Jan 2016 22:17:24 +0530</pubDate>
+    <lastBuildDate>Sat, 09 Jan 2016 22:17:24 +0530</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
     
       <item>
@@ -28,8 +28,8 @@
 
 </description>
         <pubDate>Fri, 01 Jan 2016 00:00:00 +0530</pubDate>
-        <link>http://yourdomain.com/2016/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2016/welcome-to-jekyll.html</guid>
+        <link>http://bk2dcradle.gitub.io/blog//2016/welcome-to-jekyll.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2016/welcome-to-jekyll.html</guid>
         
         
       </item>
@@ -307,8 +307,8 @@ Initially we have block &lt;em&gt;c&lt;/em&gt;:&lt;/p&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
         <pubDate>Thu, 31 Dec 2015 00:00:00 +0530</pubDate>
-        <link>http://yourdomain.com/2015/CF-Solution-Round-332-Div2C.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/CF-Solution-Round-332-Div2C.html</guid>
+        <link>http://bk2dcradle.gitub.io/blog//2015/CF-Solution-Round-332-Div2C.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2015/CF-Solution-Round-332-Div2C.html</guid>
         
         
       </item>
@@ -406,9 +406,87 @@ Initially we have block &lt;em&gt;c&lt;/em&gt;:&lt;/p&gt;
 &lt;p&gt;Nullam quis risus eget urna mollis ornare vel eu leo.&lt;/p&gt;
 </description>
         <pubDate>Sun, 09 Aug 2015 00:00:00 +0530</pubDate>
-        <link>http://yourdomain.com/2015/example-content.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/2015/example-content.html</guid>
+        <link>http://bk2dcradle.gitub.io/blog//2015/example-content.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2015/example-content.html</guid>
         
+        
+      </item>
+    
+      <item>
+        <title>Guest Posts</title>
+        <description>&lt;p&gt;If you want to create a guest post that will appear as if written by another author, simply add an &lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt; attribute to the 
+YAML header of your blog post. This will be picked up in the template and displayed in the meta-section both on the front page 
+as well as on the individual post pages.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 15 Mar 2012 00:00:00 +0530</pubDate>
+        <link>http://bk2dcradle.gitub.io/blog//2012/guest-blogs.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2012/guest-blogs.html</guid>
+        
+        
+        <category>Meta</category>
+        
+      </item>
+    
+      <item>
+        <title>Code Snippets</title>
+        <description>&lt;p&gt;Whenever you need to post a code snippet, use the liquid tags &lt;code class=&quot;highlighter-rouge&quot;&gt;hilight&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;endhilight&lt;/code&gt; like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;c1&quot;&gt;# some code goes here
+&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that this only provides color-coding. For that you might need to use a front end colorization engine like Highlight.JS or something similar.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 10 Feb 2012 00:00:00 +0530</pubDate>
+        <link>http://bk2dcradle.gitub.io/blog//2012/code-snippets.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2012/code-snippets.html</guid>
+        
+        
+        <category>Design</category>
+        
+      </item>
+    
+      <item>
+        <title>Using the Web Icons</title>
+        <description>&lt;p&gt;This template uses &lt;a href=&quot;http://typicons.com/&quot;&gt;Typicons&lt;/a&gt; web font, provided by &lt;a href=&quot;http://fontello.com/&quot;&gt;Fontello&lt;/a&gt; font bundling service. It allows you to quickly
+add nice icons into your pages by using css tags.&lt;/p&gt;
+
+&lt;p&gt;To add an icon somewhere in the template simply do:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon-home&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/i&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;This will insert a home icon, just as the one seen in the sidebar. The available class names you can use are as follows:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/resources/img/icons.png&quot; alt=&quot;Available Icons&quot; title=&quot;Available Icons&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These should work in all the browsers, all the way down to and including IE7, but not IE6.&lt;/p&gt;
+
+</description>
+        <pubDate>Thu, 19 Jan 2012 00:00:00 +0530</pubDate>
+        <link>http://bk2dcradle.gitub.io/blog//2012/using-web-icons.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2012/using-web-icons.html</guid>
+        
+        
+        <category>Design</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello World!</title>
+        <description>&lt;p&gt;Hello World!&lt;/p&gt;
+
+&lt;p&gt;This is just a sample post.&lt;/p&gt;
+
+&lt;p&gt;Vestibulum imperdiet adipiscing arcu, quis aliquam dolor condimentum dapibus. Aliquam fermentum leo aliquet quam volutpat et molestie mauris mattis. Suspendisse semper consequat velit in suscipit. Praesent blandit, mi id facilisis adipiscing, tortor tellus mollis quam, sed dignissim sapien diam ac lectus. Nunc eget ornare quam. Vivamus sit amet tortor dolor, non egestas ligula. Mauris nisi risus, semper nec blandit id, suscipit eget dolor. Sed placerat odio at erat porttitor varius. Phasellus ornare vestibulum dolor ac rhoncus. Mauris laoreet varius est eu rhoncus. Curabitur facilisis mauris eu purus pharetra vitae tincidunt nulla gravida. Duis sagittis, felis a luctus mattis, metus sem tempus velit, sit amet blandit tellus nisi id augue.&lt;/p&gt;
+
+&lt;p&gt;Proin feugiat libero ac lorem mollis fermentum. Cras et lacus sodales nisl facilisis ornare. Sed dolor eros, pulvinar ac varius non, bibendum eget odio. Nulla facilisi. Pellentesque et nisi a tellus ullamcorper faucibus. Nullam sagittis tempor mi non mattis. Proin ultricies, enim sit amet bibendum tristique, ligula ante feugiat nunc, sit amet imperdiet tortor nisl et felis. Pellentesque et nisl dui, non dictum libero. Vivamus tempor ante ac leo suscipit a sodales ligula iaculis. Curabitur massa mi, semper sed bibendum eget, auctor in nulla. Quisque at mi in ligula viverra suscipit sed vitae leo.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 18 Jan 2012 00:00:00 +0530</pubDate>
+        <link>http://bk2dcradle.gitub.io/blog//2012/hello-world.html</link>
+        <guid isPermaLink="true">http://bk2dcradle.gitub.io/blog//2012/hello-world.html</guid>
+        
+        
+        <category>Meta</category>
         
       </item>
     

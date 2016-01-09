@@ -4,7 +4,10 @@ layout: default
 <div class="content post container">
 	<h1 class="post-title">{{ page.title }}</h1>
 	<div class="post-date">
-		<time>{{ page.date | date_to_string }}</time>
+		<time>{{ page.date | date: '%B %d, %Y' }}</time>
 	</div>
 	{{ content }}
 </div>
+{% include share.html %}
+
+{% include disqus.html %}

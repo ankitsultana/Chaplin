@@ -1,5 +1,16 @@
 <footer>
 	<div class="container">
-		<p> Made with Jekyll and <small>♥</small> </p>
+		<p class="pull-left alignable">{{ site.title }} &copy; <script language="JavaScript" type="text/javascript">
+    now = new Date
+    theYear=now.getYear()
+    if (theYear < 1900)
+    theYear=theYear+1900
+    document.write(theYear)
+</script></p>
+		<p class="pull-right alignable"> 
+			<a href="http://twitter.com/{{ site.twitter_username }}"><i class="icon-twitter"></i></a>
+			<a href="http://github.com/{{ site.github_username }}"><i class="icon-github-circled"></i></a>
+		</p>
+		<div style="clear: both"></div>
 	</div>
 </footer>

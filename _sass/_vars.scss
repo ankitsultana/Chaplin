@@ -1,6 +1,6 @@
 $font-stack: 'Source Sans Pro', sans-serif;
 
-$base-font-size: 1em;
+$base-font-size: 1.2em;
 $base-line-height: 1.5;
 $base-spacing: $base-line-height * 1em;
 
@@ -24,6 +24,11 @@ $base-border: 1px solid $base-border-color;
 
 $code-font: 'Roboto Mono', sans-serif;
 $medium-gray-color: #999;
+
+$footer-height: 100px;
+
+$fb-blue-color: #3b5998;
+$twitter-blue-color: #4099ff;
 
 /* Solarized Dark Colors */
 $sol-base03: #002b36;

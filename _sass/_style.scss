@@ -1,9 +1,9 @@
 @charset "utf-8";
-// @import "reset";
 @import "vars";
 @import "tables";
 @import "syntax_highlighting";
 @import "typography";
+@import "icons";
 
 * {
   &,
@@ -11,6 +11,9 @@
   &:after {
     box-sizing: border-box;
   }
+}
+html {
+	height: 100%;
 }
 
 .clearfix {
@@ -31,16 +34,20 @@
 body {
 	width: 100%;
 	height: 100%;
+	min-height: 100%;
 	margin: 0;
 	overflow-x: hidden;
 	font-family: $font-stack;
 	color: $base-font-color;
 	font-size: $base-font-size;
 	font-weight: 400;
-	@media (max-width: $break-large) {
-	}
-	@media (max-width: $break-small) {
-	}
+}
+
+img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 100%;
 }
 
 a {
@@ -49,29 +56,44 @@ a {
 }
 a:hover {
 	color: $blue-color;
-	cursor: pointer;
+	cursor: hand;
 }
 
-.post-stub span {
-	float: right;
-	@media (max-width: $break-small) {
-		display: none;
-	}
-	font-size: 15px;
-	margin-top: 0;
-	padding-top: 0;
+.post-date {
+	font-style: italic;
+	font-weight: 400;
 }
 
 p {
-	font-size: 20px;
+	font-size: $base-font-size;
 	font-weight: lighter;
 }
 
-.post-name {
+.post-time {
+	@extend .post-date;
+	color: $git-black-color;
+	font-weight: lighter;
 	display: inline;
 	@media (max-width: $break-small) {
-		padding-top: 0em;
+		display: block;
 	}
+}
+.post-name {
+	font-size: $base-font-size / 1.1;
+	display: inline;
+	@media (max-width: $break-small) {
+		display: block;
+	}
+}
+.post-stub {
+	display: inline;
+	font-family: sans-serif;
+	font-size: $base-font-size / 1.2;
+}
+.post-item {
+	margin-bottom: 0;
+	padding: $base-spacing;
+	background-color: $well-color;
 }
 
 .post-list {
@@ -95,6 +117,12 @@ p {
 	p {
 		font-size: 25px;
 		font-weight: lighter;
+	}
+	span {
+		background-color: $white-color;
+		color: $git-black-color;
+		margin: 0em 0.2em 0em 0.2em;
+		padding: 0em 0.2em 0em 0.2em;
 	}
 	@media (max-width: $break-small) {
 		p {
@@ -121,7 +149,8 @@ p {
 
 .nav {
 	min-height: 64px;
-	border-bottom: thin solid $git-black-color;
+	border-bottom: thin solid $well-color;
+	background-color: $well-color;
 }
 
 .navlist {
@@ -149,6 +178,58 @@ p {
 }
 
 footer {
-	background-color: $git-black-color;
-	color: $white-color;
+	background-color: $well-color;
+	box-shadow: 0px 500px 0px 500px $well-color;
+	color: $git-black-color;
+	.container p {
+		font-weight: 400;
+	}
+}
+
+#wrapper {
+	min-height: 100%;
+}
+#main {
+	overflow: auto;
+	// padding-bottom: $footer-height;
+}
+#footer {
+	position: relative;
+	// margin-top: $footer-height;
+	// height: $footer-height;
+	clear: both;
+}
+
+.alignable {
+	display: inline-block;
+	margin: 0;
+}
+.pull-left {
+	@extend .alignable;
+	float: left;
+}
+.pull-right {
+	@extend .alignable;
+	float: right;
+}
+
+.pagination {
+	@extend .container;
+	margin-bottom: 1em;
+	display: block;
+	div {
+		width: 33%;
+	}
+	.text-center {
+		text-align: center;
+	}
+	.text-right {
+		width: 34%;
+		text-align: right;
+	}
+}
+
+.share-section {
+	overflow: hidden;
+	background-color: $well-color;
 }

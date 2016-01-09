@@ -1,0 +1,32 @@
+.std-icon {
+	-webkit-transition: 0.2s ease;
+	background-color: inherit;
+}
+.std-icon:hover {
+	color: $white-color;
+}
+
+.icon-facebook {
+	@extend .std-icon;
+	color: $fb-blue-color;
+}
+.icon-facebook:hover {
+	background-color: $fb-blue-color;
+}
+
+.icon-twitter {
+	@extend .std-icon;
+	color: $twitter-blue-color;
+}
+.icon-twitter:hover {
+	background-color: $twitter-blue-color;
+}
+
+.icon-github-circled {
+	@extend .std-icon;
+	color: $git-black-color;
+}
+.icon-github-circled:hover {
+	color: $white-color;
+	background-color: $git-black-color;
+}
