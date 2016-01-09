@@ -1,8 +1,8 @@
 # Chaplin
 
-*Note:* This is a pre-release
+**Note:** This is a pre-release
 
-# Usage
+#Usage
 
 Will be Updated Soon
 
