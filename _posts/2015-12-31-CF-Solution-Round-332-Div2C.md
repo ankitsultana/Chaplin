@@ -5,14 +5,14 @@ Problem Statement: [CF Link](http://codeforces.com/contest/599/problem/C)
 
 First of all, let's do a [Coordinate Compression](https://www.quora.com/What-is-coordinate-compression), so that the given array (say):
 
-{% highlight plaintext %}
+{% highlight text %}
 5
 1 100 200 300 100
 {% endhighlight %}
 
 becomes
 
-{% highlight plaintext %}
+{% highlight text %}
 5
 1 2 3 4 2
 {% endhighlight %}
@@ -21,7 +21,7 @@ becomes
 
 The answer for the above test case is `3`:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1][2][3 4 2]
 {% endhighlight %}
 
@@ -31,13 +31,13 @@ First of all we define blocks according to the question as:
 
 In simple terms, considering the previous example, the sorted array is:
 
-{% highlight plaintext %}
+{% highlight text %}
 1 2 2 3 4
 {% endhighlight %}
 
 With Blocks (Note the square brackets don't change positions):
 
-{% highlight plaintext %}
+{% highlight text %}
 [1][2][3 4 2]  # Original array
 [1][2][2 3 4]  # Sorted array
 {% endhighlight %}
@@ -48,7 +48,7 @@ Notice an interesting property, if we combine *any* two adjacent blocks, the res
 
 So if we merge second and third block in the original array, we get:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1][2 3 4 2]
 {% endhighlight %}
 
@@ -56,19 +56,19 @@ where the resulting blocks satisfy our definition of blocks.
 
 An even more interesting property is that, if we have an array with 2 blocks like shown below:
 
-{% highlight plaintext %}
+{% highlight text %}
 a b c... [p q] r s t...
 {% endhighlight %}
 
 `[p q]` is a block
-{% highlight plaintext %}
+{% highlight text %}
 a b c... [p q r s] t...
 {% endhighlight %}
 
 `[p q r s]` is also a block
 
 then
-{% highlight plaintext %}
+{% highlight text %}
 a b c... p q [r s] t...
 {% endhighlight %}
 
@@ -91,28 +91,28 @@ Also let `counter = 0`
 
 * Iteration One: The first element can be the last element of a block whose first element is the first element of the original array.
    
-{% highlight plaintext %}
+{% highlight text %}
 [1] 2 3 4 2  # Original Array
 [1] 2 2 3 4  # Sorted Array
 {% endhighlight %}
 
-{% highlight plaintext %}
+{% highlight text %}
 counter++; // counter is now 1
 {% endhighlight %}
 
 * Iteration Two: The second element can be the last element of a block whose first element is the first element of the original array.
 
-{% highlight plaintext %}
+{% highlight text %}
 [1 2] 3 4 2  # Original Array
 [1 2] 2 3 4  # Sorted Array
 {% endhighlight %}
 
-{% highlight plaintext %}
+{% highlight text %}
 counter++; // counter is now 2
 {% endhighlight %}
 * Iteration Three: The third element **cannot** be the last element of a block whose first element is the first element of the original array, *since* if we were to create a block that started at the first element and had the third element as its last element:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1 2 3] 4 2  # Original Array
 [1 2 2] 3 4  # Sorted Array
 {% endhighlight %}
@@ -121,7 +121,7 @@ counter++; // counter is now 2
 
 * Iteration Four: Again the fourth element **cannot** be the last element, same reason as point 3.
 
-{% highlight plaintext %}
+{% highlight text %}
 [1 2 3 4] 2  # Original Array
 [1 2 2 3] 4  # Sorted Array
 {% endhighlight %}
@@ -130,14 +130,14 @@ counter++; // counter is now 2
 
 * Iteration Five: This element can be the last element, since:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1 2 3 4 2]  # Original Array
 [1 2 2 3 4]  # Sorted Array
 {% endhighlight %}
 
 `[1 2 3 4 2]` is a permutation of `[1 2 2 3 4]`.
 
-{% highlight plaintext %}
+{% highlight text %}
 counter++; // counter is now 3
 {% endhighlight %}
 
@@ -147,7 +147,7 @@ Well consider the iterations when we increment the counter, i.e. iterations *one
 
 Notice the blocks formed after the respective iterations:
 
-{% highlight plaintext %}
+{% highlight text %}
 a. [1] 2 3 4 5
 b. [1 2] 3 4 2
 c. [1 2 3 4 2]
@@ -156,19 +156,19 @@ c. [1 2 3 4 2]
 Start applying the second property from the bottom.
 Initially we have block *c*:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1 2 3 4 2]
 {% endhighlight %}
 
 Applying the second property on blocks *b* and *c*, we have the following blocks:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1 2][3 4 2]
 {% endhighlight %}
 
 Now apply it to block *a* and *b*:
 
-{% highlight plaintext %}
+{% highlight text %}
 [1][2][3 4 2]
 {% endhighlight %}
 
