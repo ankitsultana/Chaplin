@@ -151,10 +151,9 @@ p {
 }
 
 .logo {
-	font-family: $heading-font;
+	// font-family: $heading-font;
 	text-align: center;
 	margin: 0;
-	text-transform: uppercase;
 	letter-spacing: 0.8px;
 	font-size: 40px;
 	line-height: 28px;
@@ -162,6 +161,9 @@ p {
 	color: $dark-gray-color;
 	span {
 		font-weight: 700;
+	}
+	@media (max-width: $break-small) {
+		font-size: 38px;  
 	}
 }
 

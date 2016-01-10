@@ -19,7 +19,7 @@ Change other variables under *User Settings* in `_config.yml` as you see fit.
 
 ### Usage
 
-* To change the font for the heading, change the `$heading-font` variable in `_sass/_vars.scss`
+* To change the font for the heading, change the `heading_font` variable in `_config.yml`
 
 * To create a new post, simply save the `.markdown` file in the `_posts` directory in the format.
 

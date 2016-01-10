@@ -1,17 +1,13 @@
 ---
 layout: about
 title: About
-author: Ankit Sultana
-profile_picture: https://raw.githubusercontent.com/bk2dcradle/bk2dcradle.github.io/master/images/author.jpg 
+author: Charlie
 permalink: /about/
 ---
 
-Hi! My name is <span class="highlight-span">Ankit Sultana</span>
+Hi! My name is <span class="highlight-span">Charlie</span>!
 
-I am a sophomore at Birla Institute of Technology and Science, Pilani, India. 
-I like solving problems, learning new Algorithms and Data Structures and learning about Web Technologies. 
-I like contributing to Open Source and writing nifty scripts to automate mundane tasks. 
+> We think too much and feel too little.
 
-> Above all, I love programming.
-
-I occasionally [blog](http://bk2dcradle.github.io/) as well.
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua.
