@@ -1,6 +1,4 @@
 ---
-short_bio: I will kill you
-author: Mr Fluffers
 ---
 <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ullamcorper est in imperdiet molestie. Curabitur aliquet sem in ante venenatis.</p>
 

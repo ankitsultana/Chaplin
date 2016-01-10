@@ -2,7 +2,7 @@
 
 title: Chaplin
 email: ankitsultana@gmail.com
-author: Ankit Sultana
+author: Charlie Chaplin
 
 description: > # this means to ignore newlines until "baseurl:"
   Chaplin is a minimalistic, mobile friendly theme for Jekyll users. 
@@ -22,8 +22,10 @@ comments: true
 
 about_footer: true
 short_bio: >
-    Lorem Ipsum Dolor
-profile_picture: http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=93462502
+    A day without laughter is a day wasted.
+profile_picture: http://img3.rnkr-static.com/list_img/11570/111570/C300/movies-and-films-directed-by-charlie-chaplin-u4.jpg
+
+tracking_id: UA-69243698-5
 
 # Build settings | Do not edit anything below this
 markdown: kramdown
