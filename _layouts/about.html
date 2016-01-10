@@ -3,12 +3,19 @@ layout: default
 ---
 <div class="content about-container">
 	<!-- h1 class="about-title">{{ page.title }}</h1 -->
-	{% if site.profile_picture %}
+	{% if page.profile_picture %}
+		<img class="profile-picture" src="{{ page.profile_picture }}">
+		</img>
+	{% elsif site.profile_picture %}
 		<img class="profile-picture" src="{{ site.profile_picture }}">
 		</img>
 	{% endif %}
 	<hr>
-		<h2>{{ site.author }}</h2>
+		{% if page.author %}
+			<h2>{{ page.author }}</h2>
+		{% else %}
+			<h2>{{ site.author }}</h2>
+		{% endif %}
 		{% if site.short_bio %}
 		<p class="light italic small">{{ site.short_bio }}</p>
 		{% endif %}

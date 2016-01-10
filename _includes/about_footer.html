@@ -10,9 +10,13 @@
 			</img>
 		{% endif %}
 		{% if page.author %}
-			<h2>{{ page.author }}</h2>
+			{% if page.author_site %}
+				<a class="deactivate-link" href="{{ page.author_site }}"><h2>{{ page.author }}</h2></a>
+			{% else %}
+				<h2>{{ page.author }}</h2>
+			{% endif %}
 		{% else %}
-			<h2>{{ site.author }}</h2>
+			<a class="deactivate-link" href="{{ site.baseurl }}/about"><h2>{{ site.author }}</h2></a>
 		{% endif %}
 		{% if page.short_bio %}
 			<hr>

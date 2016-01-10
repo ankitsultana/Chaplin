@@ -2,12 +2,12 @@
 
 title: Chaplin
 email: ankitsultana@gmail.com
-author: Ankit Sultana
+author: Charlie Chaplin
 
 description: > # this means to ignore newlines until "baseurl:"
   Chaplin is a minimalistic, mobile friendly theme for Jekyll users. 
-  It's currently in Alpha Release right now. You can check it out on
-  <span> GitHub </span>
+  The Documentation for it is available on this website itself. 
+  You can check out the source on <a href="http://github.com/bk2dcradle/Chaplin" class="deactivate-link"><span> GitHub </span></a>
 
 url: "http://bk2dcradle.gitub.io" # the base hostname & protocol for your site
 baseurl: "/Chaplin" # the subpath of your site, e.g. /blog
@@ -22,8 +22,10 @@ comments: true
 
 about_footer: true
 short_bio: >
-    Lorem Ipsum Dolor
-profile_picture: http://www.polyvore.com/cgi/img-thing?.out=jpg&size=l&tid=93462502
+    A day without laughter is a day wasted.
+profile_picture: http://img3.rnkr-static.com/list_img/11570/111570/C300/movies-and-films-directed-by-charlie-chaplin-u4.jpg
+
+tracking_id: UA-69243698-5
 
 # Build settings | Do not edit anything below this
 markdown: kramdown
