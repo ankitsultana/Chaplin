@@ -33,6 +33,6 @@ year-month-day-name-of-the-file.markdown
 
 ---
 
-### Licence
+### License
 
 MIT. Copyright (c) [Ankit Sultana](http://twitter.com/AnkitSultana)
