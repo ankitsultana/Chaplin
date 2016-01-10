@@ -6,7 +6,7 @@ author: Charlie Chaplin
 
 description: > # this means to ignore newlines until "baseurl:"
   Chaplin is a minimalistic, mobile friendly theme for Jekyll users. 
-  It's currently in Alpha Release right now. You can check it out on
+  The Documentation for it is available on this website itself. 
   <span> GitHub </span>
 
 url: "http://bk2dcradle.gitub.io" # the base hostname & protocol for your site
