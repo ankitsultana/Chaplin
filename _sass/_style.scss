@@ -261,9 +261,24 @@ footer {
 		text-style: italic;
 		font-size: $base-font-size;  
 	}
-	img {
-		max-width: $about-footer-img-size;
-		max-height: $about-footer-img-size;
-		border-radius: $about-footer-img-size;  
-	}
+}
+img.profile-picture {
+	max-width: $about-footer-img-size;
+	max-height: $about-footer-img-size;
+	border-radius: $about-footer-img-size;  
+}
+
+.about-container {
+	@extend .container;
+	text-align: center;
+}
+
+.light {
+	font-weight: lighter;
+}
+.italic {
+	font-style: italic;
+}
+.small {
+	font-size: 19px;  
 }

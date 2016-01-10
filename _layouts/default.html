@@ -15,9 +15,16 @@
 		<div id="main">
 			<nav class="nav">
 				<div class="container">
-		  			<a href="{{ site.baseurl }}"><h1 class="logo"> {{ site.title }} </h1></a>
+		  			<a href="{{ site.baseurl }}">
+						<h1 class="logo"> 
+						{% if page.title == "About" %}
+							About
+						{% else %}
+							{{ site.title }} 
+						{% endif %}
+						</h1>
+					</a>
 		  			<ul class="navlist">
-		  				<!-- li> About </li -->
 		  			</ul>
 		  		</div>
 			</nav>
