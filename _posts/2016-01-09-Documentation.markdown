@@ -31,6 +31,8 @@ year-month-day-name-of-the-file.markdown
 
 * To set up Google Analytics tracking id, just set the `tracking_id` variable in `_config.yml`. You also need to set `google_analytics` to `true`
 
+* To use Disqus for Comments, copy the *universal code* from disqus' website, and copy it in `_includes/disqus.html`.
+
 ---
 
 ### License
