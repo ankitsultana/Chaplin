@@ -39,6 +39,12 @@ hr {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
+hr.gradient {
+	border: 0;
+    height: 1px;
+	margin: 0;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1));  
+}
 
 body {
 	width: 100%;
@@ -241,4 +247,23 @@ footer {
 .share-section {
 	overflow: hidden;
 	background-color: $well-color;
+}
+
+.about-footer {
+	background-color: $well-color;  
+}
+.about-footer-div {
+	text-align: center;
+	h2 {
+		font-size: $base-font-size * 1.1;  
+	}
+	p {
+		text-style: italic;
+		font-size: $base-font-size;  
+	}
+	img {
+		max-width: $about-footer-img-size;
+		max-height: $about-footer-img-size;
+		border-radius: $about-footer-img-size;  
+	}
 }

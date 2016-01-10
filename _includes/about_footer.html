@@ -1,0 +1,27 @@
+{% if site.about_footer %}
+<hr class="gradient">
+<section class="about-footer">
+	<div class="container about-footer-div">
+		{% if page.profile_picture %}
+			<img src="{{ page.profile_picture }}">
+			</img>
+		{% elsif site.profile_picture %}
+			<img src="{{ site.profile_picture }}">
+			</img>
+		{% endif %}
+		{% if page.author %}
+			<h2>{{ page.author }}</h2>
+		{% else %}
+			<h2>{{ site.author }}</h2>
+		{% endif %}
+		{% if page.short_bio %}
+			<hr>
+			<p>{{ page.short_bio }}</p>
+		{% elsif site.short_bio %}
+			<hr>
+			<p>{{ site.short_bio }}</p>
+		{% endif %}
+	</div>
+</section>
+<hr class="gradient">
+{% endif %}
