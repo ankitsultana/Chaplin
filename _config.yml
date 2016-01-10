@@ -1,7 +1,7 @@
 # User Settings | Edit these according to your site
 
 title: Chaplin
-email: ankitsultana@gmail.com
+email: your@email.com
 author: Charlie Chaplin
 
 description: > # this means to ignore newlines until "baseurl:"
@@ -20,11 +20,13 @@ paginate: 4
 paginate_path: "/page/:num"
 comments: true
 
+heading_font: Lobster 
 about_footer: true
 short_bio: >
     A day without laughter is a day wasted.
 profile_picture: http://img3.rnkr-static.com/list_img/11570/111570/C300/movies-and-films-directed-by-charlie-chaplin-u4.jpg
 
+google_analytics: true
 tracking_id: UA-69243698-5
 
 # Build settings | Do not edit anything below this
