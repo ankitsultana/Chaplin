@@ -5,6 +5,8 @@
 @import "typography";
 @import "icons";
 
+/* Pretty Standard
+ * * * * * * * * * * */
 * {
   &,
   &:before,
@@ -43,6 +45,8 @@ body {
 	font-weight: 400;
 }
 
+/* Images Hack
+ * * * * * * * */
 img {
 	width: auto;
 	height: auto;
@@ -52,10 +56,10 @@ img {
 
 a {
 	text-decoration: none;
-	color: $blue-color;
+	color: $base-highlight-color;
 }
 a:hover {
-	color: $blue-color;
+	color: $base-highlight-color;
 	cursor: hand;
 }
 
@@ -70,7 +74,7 @@ p {
 }
 
 .post-time {
-	@extend .post-date;
+	font-style: italic;
 	color: $git-black-color;
 	font-weight: lighter;
 	display: inline;
@@ -120,6 +124,7 @@ p {
 	}
 	span {
 		background-color: $white-color;
+		font-weight: 400;
 		color: $git-black-color;
 		margin: 0em 0.2em 0em 0.2em;
 		padding: 0em 0.2em 0em 0.2em;
@@ -191,12 +196,9 @@ footer {
 }
 #main {
 	overflow: auto;
-	// padding-bottom: $footer-height;
 }
 #footer {
 	position: relative;
-	// margin-top: $footer-height;
-	// height: $footer-height;
 	clear: both;
 }
 

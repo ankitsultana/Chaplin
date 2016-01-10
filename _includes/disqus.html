@@ -2,12 +2,13 @@
 <aside id="comments" class="disqus">
 	<div class="container">
 		<h3 class="alignable pull-left"> Comments </h3> <h3 class="alignable pull-right"> <i class="icon-disqus"></i></h3>
+		<!-- 
+	  		Copy the universal code from Disqus. In particular, the div with id #disqus_thread and the following Javascript
+			As an Example see below.
+			Start here
+	   	-->
 		<div id="disqus_thread"></div>
 			<script>
-			/**
-			* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-			* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-			*/
 			var disqus_config = function () {
 			this.page.url = 'http://bk2dcradle.github.io'; // Replace PAGE_URL with your page's canonical URL variable
 			this.page.identifier = '/Chaplin'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
@@ -20,5 +21,8 @@
 			})();
 			</script>
 			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+		<!--
+	  		End here
+	  	-->
 </aside>
 {% endif %}
