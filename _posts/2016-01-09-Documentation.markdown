@@ -3,7 +3,7 @@
 
 ### Installation
 
-Installation is easy. Simply clone the [repository](http://github.com/bk2dcradle/Chaplin) on GitHub and run `jekyll serve`. The theme is fully compliant with `gh-pages`.
+Installation is easy. Simply download the theme [here](http://github.com/bk2dcradle/Chaplin/master.zip) and run `jekyll serve` inside the directory.
 
 However, before going live, set the following variables in `_config.yml`
 
