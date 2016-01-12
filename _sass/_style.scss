@@ -204,6 +204,17 @@ footer {
 	.container p {
 		font-weight: 400;
 	}
+	@media (max-width: $break-small) {
+		.container {
+			text-align: center;  
+			display: block;
+		}
+		.container .alignable {
+			margin-bottom: 0.5em;
+			width: auto;
+			float: none;
+		}
+	}
 }
 
 #wrapper {
