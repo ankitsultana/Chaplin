@@ -1,5 +1,7 @@
 # Chaplin
 
+*Note:* Check out my new theme, [accent](https://github.com/bk2dcradle/accent)
+
 ### Installation
 
 Installation is easy. Simply download the theme [here](http://github.com/bk2dcradle/Chaplin/archive/master.zip) and run `bundle exec jekyll serve` inside the directory.
