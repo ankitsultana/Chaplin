@@ -12,4 +12,6 @@ layout: default
 
 {% include about_footer.html %}
 
-{% include disqus.html %}
+{% if jekyll.environment == "production" %}
+	{% include disqus.html %}
+{% endif %}
