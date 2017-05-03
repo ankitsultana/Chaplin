@@ -1,8 +1,8 @@
 # User Settings | Edit these according to your site
 
-title: Chaplin
-email: your@email.com
-author: Charlie Chaplin
+title: dataBlog
+email: choul.raj@gmail.com
+author: Raj Nikhil Choul
 
 description: > # this means to ignore newlines until "baseurl:"
   Chaplin is a minimalistic, mobile friendly theme for Jekyll.
@@ -11,8 +11,7 @@ description: > # this means to ignore newlines until "baseurl:"
 
 url: "http://rajnikhil.gitub.io" # the base hostname & protocol for your site
 baseurl: "/Chaplin" # the subpath of your site, e.g. /blog
-twitter_username: AnkitSultana
-github_username:  bk2dcradle
+github_username:  rajnikhil
 
 permalink:          /:year/:title.html
 
