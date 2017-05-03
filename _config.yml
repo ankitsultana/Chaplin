@@ -10,7 +10,7 @@ description: > # this means to ignore newlines until "baseurl:"
   You can check out the source on <a href="http://github.com/bk2dcradle/Chaplin" class="deactivate-link"><span> GitHub </span></a>
 
 url: "http://rajnikhil.gitub.io" # the base hostname & protocol for your site
-baseurl: "/Chaplin" # the subpath of your site, e.g. /blog
+baseurl: "/dataBlog" # the subpath of your site, e.g. /blog
 github_username:  rajnikhil
 
 permalink:          /:year/:title.html
