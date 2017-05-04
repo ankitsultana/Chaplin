@@ -1,11 +1,11 @@
 ---
 layout: about
 title: About
-author: Charlie
+author: Raj Nikhil Choul
 permalink: /about/
 ---
 
-Hi! My name is <span class="highlight-span">Charlie</span>!
+Hi! My name is <span class="highlight-span">Raj Nikhil Choul</span>!
 
 > We think too much and feel too little.
 
