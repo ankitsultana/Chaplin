@@ -23,7 +23,7 @@ heading_font: Lobster
 about_footer: true
 short_bio: >
     Data Scientist
-profile_picture: "https://github.com/RajNikhil/dataBlog/blob/gh-pages/assets/ProfilePic.jpg"
+profile_picture: "https://github.com/RajNikhil/dataBlog/blob/gh-pages/assets/ProfilePic.jpg?raw=true"
 
 google_analytics: true
 tracking_id: UA-98472233-1
