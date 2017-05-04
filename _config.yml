@@ -23,7 +23,7 @@ heading_font: Lobster
 about_footer: true
 short_bio: >
     Data Scientist
-profile_picture: {{site.url}}/assets/ProfilePic.jpg
+profile_picture: /assets/ProfilePic.jpg
 
 google_analytics: true
 tracking_id: UA-98472233-1
