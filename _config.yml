@@ -23,7 +23,7 @@ heading_font: Lobster
 about_footer: true
 short_bio: >
     A day without laughter is a day wasted.
-profile_picture: http://img3.rnkr-static.com/list_img/11570/111570/C300/movies-and-films-directed-by-charlie-chaplin-u4.jpg
+profile_picture: {{site.url}}/assets/ProfilePic.jpg
 
 google_analytics: true
 tracking_id: UA-98472233-1
