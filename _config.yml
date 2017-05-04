@@ -22,7 +22,7 @@ comments: true
 heading_font: Lobster 
 about_footer: true
 short_bio: >
-    A day without laughter is a day wasted.
+    Data Scientist
 profile_picture: {{site.url}}/assets/ProfilePic.jpg
 
 google_analytics: true
