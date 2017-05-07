@@ -4,7 +4,8 @@ title: dataBlog
 email: choul.raj@gmail.com
 author: Raj Nikhil Choul
 
-description: > # I am a data analyst by trade. As part of this I work on several projects that begin from extracting the raw data, cleaning and preparing it for analysis, and finally report the findings. I also work on predictive analytics as side projects. This blog is a means for me to share my learnings.
+description: > # 
+  I am a data analyst by trade. As part of this I work on several projects that begin from extracting the raw data, cleaning and preparing it for analysis, and finally report the findings. I also work on predictive analytics as side projects. This blog is a means for me to share my learnings.
 
 url: "https://rajnikhil.gitub.io" # the base hostname & protocol for your site
 baseurl: "/dataBlog" # the subpath of your site, e.g. /blog
