@@ -10,6 +10,7 @@ description: > #
 url: "https://rajnikhil.gitub.io" # the base hostname & protocol for your site
 baseurl: "/dataBlog" # the subpath of your site, e.g. /blog
 github_username:  rajnikhil
+twitter_username: rajnikhilchoul
 
 permalink:          /:year/:title.html
 

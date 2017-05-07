@@ -22,6 +22,14 @@
 	background-color: $twitter-blue-color;
 }
 
+.icon-linkedin {
+	@extend .std-icon;
+	color: $linkedin-blue-color;
+}
+.icon-linkedin:hover {
+	background-color: $linkedin-blue-color;
+}
+
 .icon-github-circled {
 	@extend .std-icon;
 	color: $git-black-color;
